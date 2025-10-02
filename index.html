@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Generador: número y frase</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <script type="importmap">
+  {
+    "imports": {}
+  }
+  </script>
+</head>
+<body>
+  <main class="app">
+    <h1>Generador aleatorio</h1>
+
+    <section class="card">
+      <div class="result-row">
+        <div class="number" id="number">—</div>
+        <div class="phrase" id="phrase">Pulsa "Generar" para obtener un número y una frase.</div>
+      </div>
+
+      <div class="controls">
+        <label class="range-label">Rango:
+          <input id="min" type="number" value="1" min="1" class="range-input"> —
+          <input id="max" type="number" value="100" min="1" class="range-input">
+        </label>
+
+        <div class="buttons">
+          <button id="generate" class="btn primary">Generar</button>
+          <button id="copy" class="btn">Copiar</button>
+          <button id="clear" class="btn">Limpiar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="history card" aria-live="polite">
+      <h2>Historial</h2>
+      <ul id="historyList"></ul>
+    </section>
+
+    <footer class="footer">
+      <small>Hecho con ❤️ — aleatorio 1–100 y frases</small>
+    </footer>
+  </main>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
+
