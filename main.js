@@ -12,7 +12,6 @@ const el = {
   historyList: document.getElementById('historyList')
 };
 
-let phrases = [];
 let history = [];
 
 async function loadPhrases(){
@@ -29,8 +28,9 @@ function randInt(min, max){
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 function randPhrase(){
-  if(!phrases.length) return '';
-  return phrases[Math.floor(Math.random() * phrases.length)];
+  // return a single random uppercase letter A-Z
+  const code = randInt(65, 90); // ASCII A-Z
+  return String.fromCharCode(code);
 }
 function renderResult(num, phrase){
   el.number.textContent = num;
@@ -76,9 +76,8 @@ el.copy.addEventListener('click', async ()=>{
 el.clear.addEventListener('click', ()=>{
   history = [];
   renderHistory();
-  renderResult('—', 'Pulsa "Generar" para obtener un número y una frase.');
+  renderResult('—', 'Pulsa "Generar" para obtener un número y una cadena de letras.');
 });
 
-loadPhrases().then(()=>{/* ready */});
+loadPhrases?.().then?.(()=>{/* ready */});
 /* ...existing code... */
-
